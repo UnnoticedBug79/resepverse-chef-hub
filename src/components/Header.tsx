@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, User, Star } from 'lucide-react';
@@ -12,12 +13,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-orange-400 rounded-xl flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">R</span>
             </div>
             <span className="text-2xl font-bold text-foreground">ResepVerse</span>
-          </div>
+          </Link>
 
           {/* Search Bar */}
           <div className="hidden md:flex items-center space-x-4 flex-1 max-w-md mx-8">
@@ -39,8 +40,15 @@ const Header = () => {
               <Star className="w-4 h-4" />
               <span>Explore</span>
             </Button>
-            <Button variant="outline" className="hidden md:flex">
-              Become a Chef
+            <Button variant="outline" className="hidden md:flex" asChild>
+              <Link to="/become-chef">
+                Become a Chef
+              </Link>
+            </Button>
+            <Button variant="outline" className="hidden md:flex" asChild>
+              <Link to="/nft-minting">
+                Mint NFT
+              </Link>
             </Button>
             <Button className="bg-primary hover:bg-primary/90">
               <User className="w-4 h-4 mr-2" />

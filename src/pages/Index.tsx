@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import WorldMap from '@/components/WorldMap';
 import RecipeCard from '@/components/RecipeCard';
@@ -76,15 +76,15 @@ const Index = () => {
             Join the world's first blockchain-powered cooking platform. Share your recipes, learn from master chefs, and earn $LSK tokens.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Start Cooking
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link to="/become-chef">Start Cooking</Link>
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => setShowMintModal(true)}
+              asChild
             >
-              Mint Your Recipe
+              <Link to="/nft-minting">Mint Your Recipe</Link>
             </Button>
           </div>
         </div>
